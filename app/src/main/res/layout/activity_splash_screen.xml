@@ -10,28 +10,25 @@
 
     <TextView
         android:id="@+id/appname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AR Furniture"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:layout_margin="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="AR Furniture"
+        android:textColor="@color/black"
+        android:fontFamily="serif-monospace"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-        />
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:layout_margin="25dp"
-        app:lottie_rawRes="@raw/splash"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        android:id="@+id/lottie"
-
-        />
+        app:lottie_rawRes="@raw/splash" />
 
 
 </RelativeLayout>
