@@ -1,5 +1,6 @@
 package com.clandestinestudio.arfurniture
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -47,7 +48,16 @@ class MainActivity : AppCompatActivity() {
         rvRecyclerView.adapter = itemAdapter
         itemAdapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@MainActivity, "you have clicked on item no: $position", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@MainActivity, "you have clicked on item no: $position", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+                intent.putExtra("id", furnitureList[position].id)
+                intent.putExtra("name", furnitureList[position].name)
+                intent.putExtra("image_url", furnitureList[position].image_url)
+                intent.putExtra("dimensions", furnitureList[position].dimensions)
+                intent.putExtra("description", furnitureList[position].description)
+                intent.putExtra("category", furnitureList[position].category)
+                startActivity(intent)
             }
 
         })
