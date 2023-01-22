@@ -13,4 +13,6 @@
     <color name="Primary_Dark_600">#144272</color>
     <color name="Secondary_blue_300">#205295</color>
     <color name="Secondary_blue_200">#2C74B3</color>
+    <color name="alternate_orange_200">#f26422</color>
+    <color name="alternate_orange_600">#E14726</color>
 </resources>

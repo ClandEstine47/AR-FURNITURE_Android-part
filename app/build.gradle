@@ -35,8 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 //    ndkVersion '21.3.6528147'
 }
+
+
+
 
 dependencies {
 
@@ -52,5 +56,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:5.2.0"
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
 
 }
