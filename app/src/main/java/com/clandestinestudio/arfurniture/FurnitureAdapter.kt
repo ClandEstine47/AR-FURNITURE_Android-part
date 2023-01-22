@@ -13,13 +13,23 @@ import com.squareup.picasso.Picasso
 class FurnitureAdapter(private val context: Context, private val items: ArrayList<FurnitureModelClass>) :
     RecyclerView.Adapter<FurnitureAdapter.ViewHolder>() {
 
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(
                 R.layout.furniture_card_layout,
                 parent,
                 false
-            )
+            ), mListener
         )
     }
 
@@ -35,9 +45,15 @@ class FurnitureAdapter(private val context: Context, private val items: ArrayLis
         return items.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
         // Holds the TextView that will add each item to
         val tvName : TextView = view.findViewById(R.id.tv_name)
         val imageView: ImageView = view.findViewById(R.id.img_view)
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
 }
