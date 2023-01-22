@@ -36,7 +36,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
+                android:layout_height="1dp"
                 android:background="@color/Secondary_blue_200" />
 
             <LinearLayout
@@ -58,14 +58,19 @@
                             android:id="@+id/tv_name_detailsPage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:textColor="@color/black"
-                            android:textSize="24sp"/>
+                            android:textSize="24sp"
+                            android:text="IDANAS"
+                            android:fontFamily="@font/montserrat"
+                            />
                         <TextView
                             android:id="@+id/tv_category_detailsPage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16dp"
-                            android:textStyle="bold"
+                            android:text="Chair"
+                            android:fontFamily="@font/montserrat"
                            />
                     </LinearLayout>
                 </LinearLayout>
@@ -91,19 +96,22 @@
                 </LinearLayout>
             </LinearLayout>
             <View
-                android:layout_width="200dp"
-                android:layout_height="4dp"
+                android:layout_width="250dp"
+                android:layout_height="1dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="#dedede"/>
+                android:background="#DDDDDD"/>
             <TextView
                 android:id="@+id/tv_description_detailsPage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
+                android:text="Hey This is dummy text for testing"
+                android:textAlignment="center"
                 android:textColor="#444444"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,6 +121,9 @@
                 android:backgroundTint="@color/Secondary_blue_300"
                 android:textSize="16sp"
                 android:text="Try in ar"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+
                 />
 
 

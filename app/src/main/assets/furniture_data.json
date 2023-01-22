@@ -3,7 +3,7 @@
     {
       "id": "ch_1",
       "name": "REMSTA",
-      "category": "chair",
+      "category": "Chair",
       "image_url": "https://www.ikea.com/us/en/images/products/remsta-armchair-djuparp-dark-green-blue__0908607_pe783330_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/remsta-armchair-djuparp-dark-green-blue__0908520_pe783267_s5.jpg?f=xxs",
       "description": "Softly rounded corners and nice details give REMSTA armchair a traditional look. The cover has a smooth feel, the shape gives lumbar support – and compact packaging reduces climate impact during transport."
@@ -13,7 +13,7 @@
     {
       "id": "ch_2",
       "name": "TEODORES",
-      "category": "chair",
+      "category": "Chair",
       "image_url": "https://www.ikea.com/us/en/images/products/teodores-chair-white__0727344_pe735616_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/teodores-chair-white__0949552_pe799848_s5.jpg?f=xs",
       "description": "A comfy chair that’s sturdy, yet lightweight and stackable too. An easy match with different tables and styles and eager to please, whether it’s in the dining room, in the entrance or by your bed."
@@ -23,7 +23,7 @@
     {
       "id": "bed_1",
       "name": "IDANAS",
-      "category": "bed",
+      "category": "Bed",
       "image_url": "https://www.ikea.com/us/en/images/products/idanaes-upholstered-bed-frame-gunnared-dark-gray__0953726_pe802891_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/idanaes-upholstered-bed-frame-gunnared-dark-gray__0955914_pe804285_s5.jpg?f=xs",
       "description": "The sloping headboard and soft upholstery make IDANÄS upholstered bed frame extra comfortable. Wake up with coffee and a morning paper! Classic button detailing and turned wooden legs are timeless."
@@ -33,7 +33,7 @@
     {
       "id": "bed_2",
       "name": "TUFJORD",
-      "category": "bed",
+      "category": "Bed",
       "image_url": "https://www.ikea.com/us/en/images/products/tufjord-upholstered-storage-bed-gunnared-blue__1151047_pe884749_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/tufjord-upholstered-storage-bed-gunnared-blue__0932763_pe791610_s5.jpg?f=xs",
       "description": "Look under the bed! Here´s storage in 4 integrated drawers that help you keep your bedroom organized and calm. In addition, the soft shapes of the bed make you unwind and your lazy mornings even cozier."
@@ -43,7 +43,7 @@
     {
       "id": "bed_3",
       "name": "BLÅKULLEN",
-      "category": "bed",
+      "category": "Bed",
       "image_url": "https://www.ikea.com/us/en/images/products/blakullen-uph-bed-frame-with-corner-headboard-knisa-medium-blue__0995498_pe821743_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/blakullen-uph-bed-frame-with-corner-headboard-knisa-medium-blue__1012654_pe828949_s5.jpg?f=xs",
       "description": "Ideal for compact living, a comfy bed and sofa in one! This bed frame is upholstered all around, the headboard makes a cozy corner for reading or watching movies, and it all comes in one convenient package."
@@ -53,7 +53,7 @@
     {
       "id": "sofa_1",
       "name": "FRIHETEN",
-      "category": "bed",
+      "category": "Sofa",
       "image_url": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0690261_pe723182_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0733170_pe738880_s5.jpg?f=xl",
       "description": "After a good night’s sleep, you can effortlessly convert your bedroom or guest room into a living room again. The built-in storage is easy to access and spacious enough to store bedding, books and PJs."

@@ -26,8 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Discover"
-                    android:textStyle="bold"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/abrilfatface"
                     android:textColor="#FFF"
                     android:layout_marginHorizontal="25dp"
                     android:textSize="24sp"/>
@@ -47,6 +46,7 @@
                     android:drawablePadding="8dp"
                     android:hint="What are you looking for ?"
                     android:padding="16dp"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/black"
                     android:textColorHint="#aeaeae"
                     android:textSize="14sp"/>
@@ -73,10 +73,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="4dp"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/cascadiacode"
                     android:layout_marginHorizontal="14dp"
-                    android:textColor="#000"
                     android:padding="8dp"/>
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -113,6 +111,7 @@
                                     android:text="BEDS"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:textSize="14sp"/>
 
                             </LinearLayout>
@@ -141,6 +140,7 @@
                                     android:text="SOFAS"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:textSize="14sp"/>
 
                             </LinearLayout>
@@ -169,6 +169,7 @@
                                     android:text="CHAIRS"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:textSize="14sp"/>
 
                             </LinearLayout>
@@ -197,6 +198,7 @@
                                     android:text="TABLES"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="bold"
+                                    android:fontFamily="@font/montserrat"
                                     android:textSize="14sp"/>
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -208,9 +210,7 @@
                     android:text="Explore"
                     android:layout_marginHorizontal="24dp"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/cascadiacode"
                     android:layout_marginBottom="16dp"
                     android:layout_marginTop="8dp" />
                 <androidx.recyclerview.widget.RecyclerView
