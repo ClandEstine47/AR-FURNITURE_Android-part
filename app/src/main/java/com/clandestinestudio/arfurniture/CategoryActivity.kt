@@ -15,17 +15,27 @@ class CategoryActivity : AppCompatActivity() {
 
         val rvCategoryList: RecyclerView = findViewById(R.id.rvCategoryFurnitureList)
 
-        val furnitureList = intent.getParcelableArrayListExtra<FurnitureModelClass>("categorizedFurnitureList")
+        val categFurnitureList = intent.getParcelableArrayListExtra<FurnitureModelClass>("categorizedFurnitureList")
 
         rvCategoryList.layoutManager = GridLayoutManager(this, 2)
         val itemAdapter = FurnitureAdapter(this@CategoryActivity,
-        furnitureList as ArrayList<FurnitureModelClass>)
+        categFurnitureList as ArrayList<FurnitureModelClass>)
         rvCategoryList.adapter = itemAdapter
 
         itemAdapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@CategoryActivity, "you have clicked on item no. $position", Toast.LENGTH_SHORT).show()
+              //   Toast.makeText(this@CategoryActivity, "you have clicked on item no. $position", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this@CategoryActivity, DetailsActivity::class.java)
+                intent.putExtra("id", categFurnitureList[position].id)
+                intent.putExtra("name", categFurnitureList[position].name)
+                intent.putExtra("image_url", categFurnitureList[position].image_url)
+                intent.putExtra("dimensions", categFurnitureList[position].dimensions)
+                intent.putExtra("description", categFurnitureList[position].description)
+                intent.putExtra("category", categFurnitureList[position].category)
+                startActivity(intent)
             }
+
         })
     }
 }
