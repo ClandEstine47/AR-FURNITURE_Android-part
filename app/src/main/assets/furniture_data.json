@@ -57,7 +57,22 @@
       "image_url": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0690261_pe723182_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0733170_pe738880_s5.jpg?f=xl",
       "description": "After a good night’s sleep, you can effortlessly convert your bedroom or guest room into a living room again. The built-in storage is easy to access and spacious enough to store bedding, books and PJs."
+    },
+    {
+      "id": "table_1",
+      "name": "LINNMON",
+      "category": "Table",
+      "image_url": "https://www.ikea.com/us/en/images/products/linnmon-adils-table-white__0737165_pe740925_s5.jpg?f=xxs",
+      "dimensions": "https://www.ikea.com/us/en/images/products/linnmon-adils-table-white__1009784_pe827741_s5.jpg?f=xs",
+      "description": "Mix and match your choice of table top and legs – or choose this ready-made combination. Strong and light-weight, made with a technique that uses less raw materials, reducing the impact on the environment."
+    },
+    {
+      "id": "table_2",
+      "name": "MICKE",
+      "category": "Table",
+      "image_url": "https://www.ikea.com/us/en/images/products/micke-desk-white__0736020_pe740347_s5.jpg?f=xxs",
+      "dimensions": "https://www.ikea.com/us/en/images/products/micke-desk-white__1045437_pe842611_s5.jpg?f=xs",
+      "description": "A clean and simple look that fits just about anywhere. You can combine it with other desks or drawer units in the MICKE series to extend your work space. The clever design at the back hides messy cables."
     }
-
   ]
 }
