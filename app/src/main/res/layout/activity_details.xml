@@ -16,7 +16,8 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="364dp">
+                android:layout_height="364dp"
+                android:background="@color/white">
 <!--                <ImageView-->
 <!--                    android:id="@+id/iv_detailsPage"-->
 <!--                    android:layout_width="match_parent"-->
