@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".CategoryActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Primary_Dark_600"
-        android:padding="4dp"
+        android:padding="14dp"
         app:elevation="8dp">
 
         <LinearLayout
@@ -17,10 +18,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/Category_name_tv"
+                android:id="@+id/tv_category_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Discover"
+                android:text="Title:"
                 android:textStyle="bold"
                 android:fontFamily="serif-monospace"
                 android:textColor="#FFF"
@@ -34,7 +35,7 @@
         android:padding="4dp"
         android:layout_alignParentBottom="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="45dp"
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView

@@ -3,6 +3,7 @@ package com.clandestinestudio.arfurniture
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,11 +13,11 @@ class CategoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
-
+        val categoryTitleTV: TextView = findViewById(R.id.tv_category_title)
         val rvCategoryList: RecyclerView = findViewById(R.id.rvCategoryFurnitureList)
 
         val categFurnitureList = intent.getParcelableArrayListExtra<FurnitureModelClass>("categorizedFurnitureList")
-
+        categoryTitleTV?.text = categFurnitureList?.get(0)?.category + "s"
         rvCategoryList.layoutManager = GridLayoutManager(this, 2)
         val itemAdapter = FurnitureAdapter(this@CategoryActivity,
         categFurnitureList as ArrayList<FurnitureModelClass>)
