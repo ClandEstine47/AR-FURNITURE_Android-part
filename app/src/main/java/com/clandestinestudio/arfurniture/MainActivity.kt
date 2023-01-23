@@ -74,19 +74,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         bedCard.setOnClickListener {
-            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            categorizedList = furnitureList.filter { it.category == "Bed"} as ArrayList<FurnitureModelClass>
             openCategoryActivity()
         }
         sofaCard.setOnClickListener {
-            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            categorizedList = furnitureList.filter { it.category == "Sofa"} as ArrayList<FurnitureModelClass>
             openCategoryActivity()
         }
         chairCard.setOnClickListener {
-            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            categorizedList = furnitureList.filter { it.category == "Chair"} as ArrayList<FurnitureModelClass>
             openCategoryActivity()
         }
         tableCard.setOnClickListener {
-            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            categorizedList = furnitureList.filter { it.category == "Table"} as ArrayList<FurnitureModelClass>
             openCategoryActivity()
         }
 
