@@ -26,16 +26,16 @@
                 android:fontFamily="serif-monospace"
                 android:textColor="#FFF"
                 android:layout_marginHorizontal="12dp"
-                android:textSize="18sp"/>
+                android:textSize="24sp"/>
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:padding="4dp"
+        android:paddingTop="18dp"
         android:layout_alignParentBottom="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="54dp"
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
