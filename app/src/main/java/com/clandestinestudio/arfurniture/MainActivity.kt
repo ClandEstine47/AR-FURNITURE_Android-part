@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
@@ -16,8 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        startActivity(Intent(this, UnityHandlerActivity::class.java))
+        val bedCard = findViewById<CardView>(R.id.cv_beds)
+        val sofaCard = findViewById<CardView>(R.id.cv_sofas)
+        val chairCard = findViewById<CardView>(R.id.cv_chairs)
+        val tableCard = findViewById<CardView>(R.id.cv_tables)
         val rvRecyclerView = findViewById<RecyclerView>(R.id.rvFurnitureList)
         val furnitureList : ArrayList<FurnitureModelClass> = ArrayList()
+        var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
         try {
 
             val obj = JSONObject(getJSONFromAssets())
@@ -61,6 +67,28 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        fun openCategoryActivity(){
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putParcelableArrayListExtra("categorizedFurnitureList", ArrayList(categorizedList))
+            startActivity(intent)
+        }
+        bedCard.setOnClickListener {
+            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            openCategoryActivity()
+        }
+        sofaCard.setOnClickListener {
+            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            openCategoryActivity()
+        }
+        chairCard.setOnClickListener {
+            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            openCategoryActivity()
+        }
+        tableCard.setOnClickListener {
+            categorizedList = furnitureList.filter { it.category == "BED"} as ArrayList<FurnitureModelClass>
+            openCategoryActivity()
+        }
 
     }
 
