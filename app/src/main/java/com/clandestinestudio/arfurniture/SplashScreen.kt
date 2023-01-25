@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.airbnb.lottie.Lottie
 import com.airbnb.lottie.LottieAnimationView
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import kotlinx.coroutines.*
 
 class SplashScreen : AppCompatActivity() {
@@ -19,6 +20,7 @@ class SplashScreen : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(6000L)
             startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+            Animatoo.animateSplit(this@SplashScreen)
             finish()
         }
 

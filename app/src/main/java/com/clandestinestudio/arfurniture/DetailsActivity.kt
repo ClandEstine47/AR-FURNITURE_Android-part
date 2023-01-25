@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.squareup.picasso.Picasso
@@ -57,5 +58,10 @@ class DetailsActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Animatoo.animateSwipeLeft(this@DetailsActivity)
     }
 }

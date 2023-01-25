@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import org.json.JSONException
 import org.json.JSONObject
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("description", furnitureList[position].description)
                 intent.putExtra("category", furnitureList[position].category)
                 startActivity(intent)
+                Animatoo.animateSwipeRight(this@MainActivity)
             }
 
         })
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CategoryActivity::class.java)
             intent.putParcelableArrayListExtra("categorizedFurnitureList", ArrayList(categorizedList))
             startActivity(intent)
+            Animatoo.animateZoom(this@MainActivity)
         }
         bedCard.setOnClickListener {
             categorizedList = furnitureList.filter { it.category == "Bed"} as ArrayList<FurnitureModelClass>
