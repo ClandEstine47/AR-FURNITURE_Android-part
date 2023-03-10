@@ -1,8 +1,10 @@
 package com.clandestinestudio.arfurniture
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
@@ -10,14 +12,18 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.squareup.picasso.Picasso
+import com.unity3d.player.UnityPlayer
+import com.unity3d.player.UnityPlayerActivity
 import kotlin.concurrent.timer
 
-class DetailsActivity : AppCompatActivity() {
+class DetailsActivity : UnityPlayerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
         var isFavorite: Boolean = false
+
+        var btn_OpenUnity: Button = findViewById(R.id.btn_OpenUnity)
 
         val furnitureNameView: TextView = findViewById(R.id.tv_name_detailsPage)
         val furnitureCategoryView: TextView = findViewById(R.id.tv_category_detailsPage)
@@ -58,10 +64,31 @@ class DetailsActivity : AppCompatActivity() {
             }
 
         }
+
+        btn_OpenUnity.setOnClickListener{
+//            OpenUnity()
+            var intent = Intent(this, UnityPlayerActivity::class.java)
+            startActivity(intent)
+            UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", "ChairOffice")
+        }
+
+
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
         Animatoo.animateSwipeLeft(this@DetailsActivity)
+    }
+
+    fun OpenUnity(){
+        var intent = Intent(this, UnityPlayerActivity::class.java)
+        startActivity(intent)
+//            val handler = Handler()
+//            val delay: Long = 5000 // delay for 5 second
+
+//            handler.postDelayed({
+        // code to be executed after the delay
+        UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", "ChairOffice")
+//            }, delay)
     }
 }
