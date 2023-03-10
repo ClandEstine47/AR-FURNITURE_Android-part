@@ -37,7 +37,7 @@ class DetailsActivity : AppCompatActivity() {
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel(furnitureImageUrl))
-        imageList.add(SlideModel(furnitureDimensionImgUrl))
+//        imageList.add(SlideModel(furnitureDimensionImgUrl))
 
         furnitureNameView.text = furnitureName
         furnitureCategoryView.text = furnitureCategory
