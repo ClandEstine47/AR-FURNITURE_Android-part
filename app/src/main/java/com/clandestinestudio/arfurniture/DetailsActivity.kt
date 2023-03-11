@@ -3,10 +3,12 @@ package com.clandestinestudio.arfurniture
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.airbnb.lottie.LottieAnimationView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.denzcoskun.imageslider.ImageSlider
@@ -17,13 +19,14 @@ import com.unity3d.player.UnityPlayerActivity
 import kotlin.concurrent.timer
 
 class DetailsActivity : UnityPlayerActivity() {
+    var furnitureFolderName: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
         var isFavorite: Boolean = false
 
-        var btn_OpenUnity: Button = findViewById(R.id.btn_OpenUnity)
+        var btnOpenUnity: Button = findViewById(R.id.btn_OpenUnity)
 
         val furnitureNameView: TextView = findViewById(R.id.tv_name_detailsPage)
         val furnitureCategoryView: TextView = findViewById(R.id.tv_category_detailsPage)
@@ -39,6 +42,7 @@ class DetailsActivity : UnityPlayerActivity() {
         val furnitureImageUrl = bundle!!.getString("image_url")
         val furnitureDescription = bundle!!.getString("description")
         val furnitureDimensionImgUrl = bundle!!.getString("dimensions")
+        furnitureFolderName = bundle!!.getString("itemFolderName")
 
         val imageList = ArrayList<SlideModel>()
 
@@ -65,11 +69,11 @@ class DetailsActivity : UnityPlayerActivity() {
 
         }
 
-        btn_OpenUnity.setOnClickListener{
-//            OpenUnity()
-            var intent = Intent(this, UnityPlayerActivity::class.java)
-            startActivity(intent)
-            UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", "ChairOffice")
+        btnOpenUnity.setOnClickListener{
+            OpenUnity()
+//            var intent = Intent(this, UnityPlayerActivity::class.java)
+//            startActivity(intent)
+//            UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", "Sofa2Seat")
         }
 
 
@@ -83,12 +87,6 @@ class DetailsActivity : UnityPlayerActivity() {
     fun OpenUnity(){
         var intent = Intent(this, UnityPlayerActivity::class.java)
         startActivity(intent)
-//            val handler = Handler()
-//            val delay: Long = 5000 // delay for 5 second
-
-//            handler.postDelayed({
-        // code to be executed after the delay
-        UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", "ChairOffice")
-//            }, delay)
+        UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", furnitureFolderName)
     }
 }

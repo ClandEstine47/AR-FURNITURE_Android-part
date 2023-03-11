@@ -41,8 +41,9 @@ class MainActivity : AppCompatActivity() {
                 val image_url = furniture.getString("image_url")
                 val dimensions = furniture.getString("dimensions")
                 val description = furniture.getString("description")
+                val itemFolderName = furniture.getString("itemFolderName")
                 val furnitureDetails =
-                    FurnitureModelClass(id, name, category, image_url, dimensions, description)
+                    FurnitureModelClass(id, name, category, image_url, dimensions, description,itemFolderName )
 
 
                 furnitureList.add(furnitureDetails)
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("dimensions", furnitureList[position].dimensions)
                 intent.putExtra("description", furnitureList[position].description)
                 intent.putExtra("category", furnitureList[position].category)
+                intent.putExtra("itemFolderName", furnitureList[position].itemFolderName)
                 startActivity(intent)
                 Animatoo.animateSwipeRight(this@MainActivity)
             }

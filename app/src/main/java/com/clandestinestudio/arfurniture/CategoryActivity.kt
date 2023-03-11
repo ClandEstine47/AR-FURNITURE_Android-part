@@ -36,6 +36,7 @@ class CategoryActivity : AppCompatActivity() {
                 intent.putExtra("dimensions", categFurnitureList[position].dimensions)
                 intent.putExtra("description", categFurnitureList[position].description)
                 intent.putExtra("category", categFurnitureList[position].category)
+                intent.putExtra("itemFolderName", categFurnitureList[position].itemFolderName)
                 startActivity(intent)
                 Animatoo.animateSwipeRight(this@CategoryActivity)
             }

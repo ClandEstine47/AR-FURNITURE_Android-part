@@ -2,57 +2,60 @@
   "furniture": [
     {
       "id": "chair_1",
-      "name": "REMSTA",
+      "name": "Office Chair",
       "category": "Chair",
       "image_url": "https://i.postimg.cc/VkTdjBzj/chair1-1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/millberget-swivel-chair-murum-black__1045855_pe842739_s5.jpg",
-      "description": "Comfy, lightweight and easy to move around. The shape of the armrests adds to the comfort and the brake mechanism of the castors keeps the chair in place when you stand up – and releases when you sit down."
-
+      "description": "Comfy, lightweight and easy to move around. The shape of the armrests adds to the comfort and the brake mechanism of the castors keeps the chair in place when you stand up – and releases when you sit down.",
+      "itemFolderName": "ChairOffice"
 
     },
     {
       "id": "bed_1",
-      "name": "IDANAS",
+      "name": "Single Bed",
       "category": "Bed",
       "image_url": "https://i.postimg.cc/RCyX8ws0/167810247339770012.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/songesand-bed-frame-brown__0752925_pe747516_s5.jpg?f=xs",
-      "description": "The sloping headboard and soft upholstery make IDANÄS upholstered bed frame extra comfortable. Wake up with coffee and a morning paper! Classic button detailing and turned wooden legs are timeless."
-
+      "description": "The sloping headboard and soft upholstery make IDANÄS upholstered bed frame extra comfortable. Wake up with coffee and a morning paper! Classic button detailing and turned wooden legs are timeless.",
+      "itemFolderName": "BedSingle"
 
     },
     {
       "id": "bed_2",
-      "name": "TUFJORD",
+      "name": "Twin XL Bed",
       "category": "Bed",
       "image_url": "https://i.postimg.cc/sDH03tg3/bed1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/tufjord-upholstered-storage-bed-gunnared-blue__0932763_pe791610_s5.jpg?f=xs",
-      "description": "Look under the bed! Here´s storage in 4 integrated drawers that help you keep your bedroom organized and calm. In addition, the soft shapes of the bed make you unwind and your lazy mornings even cozier."
-
+      "description": "Look under the bed! Here´s storage in 4 integrated drawers that help you keep your bedroom organized and calm. In addition, the soft shapes of the bed make you unwind and your lazy mornings even cozier.",
+      "itemFolderName": "BedTwinXL"
 
     },
     {
       "id": "sofa_1",
-      "name": "KIVIK",
+      "name": "2 Seat Sofa",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/Tw88qhy7/sofa1-1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/morabo-sofa-gunnared-dark-gray-wood__0815815_pe773045_s5.jpg?f=xs",
-      "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socializing and relaxation."
+      "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socializing and relaxation.",
+      "itemFolderName": "Sofa2Seat"
     },
     {
       "id": "sofa_2",
-      "name": "UPPLAND",
+      "name": "4 Seat Sofa",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/0ym0KQs2/sofa2-1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/vinliden-loveseat-hakebo-dark-gray__0964285_pe808968_s5.jpg?f=xs",
-      "description": "You know the feeling when you sit, lie down or hang out in a sofa, rather than on it. That’s how embracing the deep and generous UPPLAND sofa is – your new favorite place for cozy evenings and lazy days!"
+      "description": "You know the feeling when you sit, lie down or hang out in a sofa, rather than on it. That’s how embracing the deep and generous UPPLAND sofa is – your new favorite place for cozy evenings and lazy days!",
+      "itemFolderName": "Sofa4Seat"
     },
     {
       "id": "sofa_3",
-      "name": "UPPLAND",
+      "name": "Couch",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/63XdHM3f/couch-removebg-preview.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0733170_pe738880_s5.jpg?f=xl",
-      "description": "Use this FINNALA chaise longue on its own or with other combinations in the series to create the perfect furnishing for you and your space. Clean design and long-lasting comfort are always included."
+      "description": "Use this FINNALA chaise longue on its own or with other combinations in the series to create the perfect furnishing for you and your space. Clean design and long-lasting comfort are always included.",
+      "itemFolderName": "Couch"
     },
     {
       "id": "table_1",
@@ -60,7 +63,8 @@
       "category": "Table",
       "image_url": "https://www.ikea.com/us/en/images/products/lagkapten-alex-desk-white__0977483_pe813612_s5.jpg?f=xxs",
       "dimensions": "https://www.ikea.com/us/en/images/products/linnmon-adils-table-white__1009784_pe827741_s5.jpg?f=xs",
-      "description": "Limited space doesn’t mean you have to say no to studying or working from home. This desk takes up little floor space yet still has a drawer unit where you can store papers and other important items."
+      "description": "Limited space doesn’t mean you have to say no to studying or working from home. This desk takes up little floor space yet still has a drawer unit where you can store papers and other important items.",
+      "itemFolderName": "1"
     }
   ]
 }
