@@ -7,4 +7,5 @@ data class FavoriteFurniture(
     val image_url: String,
     val dimensions: String,
     val description: String,
+    val itemFolderName: String,
 )

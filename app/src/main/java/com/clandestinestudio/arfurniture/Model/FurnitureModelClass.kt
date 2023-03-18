@@ -9,6 +9,7 @@ class FurnitureModelClass (
     val image_url: String?,
     val dimensions: String?,
     val description: String?,
+    val itemFolderName: String?,
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -16,7 +17,8 @@ class FurnitureModelClass (
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readString(),
     ) {
     }
 
@@ -27,6 +29,7 @@ class FurnitureModelClass (
         parcel.writeString(image_url)
         parcel.writeString(dimensions)
         parcel.writeString(description)
+        parcel.writeString(itemFolderName)
     }
 
     override fun describeContents(): Int {

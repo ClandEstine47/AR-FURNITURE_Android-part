@@ -26,5 +26,6 @@ dependencyResolutionManagement {
         flatDir {
             dirs "${project(':unityLibrary').projectDir}/libs"
         }
+
     }
 }
