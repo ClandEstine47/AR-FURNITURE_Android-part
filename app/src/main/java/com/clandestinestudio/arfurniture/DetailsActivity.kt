@@ -110,6 +110,7 @@ class DetailsActivity : AppCompatActivity() {
         updateFavoriteAnimation(isFavorite)
     }
 
+    // animate when back button is pressed
     override fun onBackPressed() {
         super.onBackPressed()
         Animatoo.animateSwipeLeft(this)
