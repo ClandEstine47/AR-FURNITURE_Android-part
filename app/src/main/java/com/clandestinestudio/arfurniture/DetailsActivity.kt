@@ -97,7 +97,7 @@ class DetailsActivity : AppCompatActivity() {
 
     }
 
-    fun openUnity() {
+    private fun openUnity() {
         val intent = Intent(this, UnityPlayerActivity::class.java)
         startActivity(intent)
         UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", furnitureFolderName)
