@@ -1,6 +1,7 @@
 package com.clandestinestudio.arfurniture
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.HorizontalScrollView
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: FurnitureAdapter
     private lateinit var categoryHorizontalScrollView: HorizontalScrollView
     private lateinit var categoryHeadingTextView: TextView
+    private lateinit var exploreHeadingTextView: TextView
     private var furnitureList : ArrayList<FurnitureModelClass> = ArrayList()
     private var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         rvRecyclerView = findViewById(R.id.rvFurnitureList)
         categoryHorizontalScrollView = findViewById(R.id.horizontalScrollView)
         categoryHeadingTextView = findViewById(R.id.category_heading_tv)
+        exploreHeadingTextView = findViewById(R.id.exploreHeadingTv)
 
 //        startActivity(Intent(this, UnityHandlerActivity::class.java))
         val bedCard = findViewById<CardView>(R.id.cv_beds)
@@ -113,9 +116,16 @@ class MainActivity : AppCompatActivity() {
             if (hasFocus) {
                 categoryHorizontalScrollView.visibility = View.GONE
                 categoryHeadingTextView.visibility = View.GONE
+                exploreHeadingTextView.text = "Try Searching for furniture or keywords."
+                exploreHeadingTextView.textSize = 12f
+                exploreHeadingTextView.setTextColor(Color.GRAY)
             } else {
                 categoryHorizontalScrollView.visibility = View.VISIBLE
                 categoryHeadingTextView.visibility = View.VISIBLE
+                exploreHeadingTextView.text = "Explore"
+                exploreHeadingTextView.textSize = 16f
+                exploreHeadingTextView.setTextColor(Color.parseColor("#465C8C"))
+                searchView.setQuery("", false)
             }
         }
 
@@ -157,12 +167,9 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            if (filteredList.isEmpty()) {
-                Toast.makeText(this, "No Such Item", Toast.LENGTH_SHORT).show()
-            }else {
-                adapter.setFilteredList(filteredList)
 
-            }
+            adapter.setFilteredList(filteredList)
+
         }
 
     }
@@ -173,5 +180,14 @@ class MainActivity : AppCompatActivity() {
             it.readText()}
         return jsonString
 
+    }
+
+    override fun onBackPressed() {
+        if (!searchView.isIconified) {
+            searchView.setQuery("", false)
+            searchView.isIconified = true
+            return
+        }
+        super.onBackPressed()
     }
 }
