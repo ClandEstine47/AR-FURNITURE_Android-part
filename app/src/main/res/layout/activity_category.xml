@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Primary_Dark_600"
+        android:background="@color/Primary_color"
         android:padding="14dp"
         app:elevation="8dp">
 
@@ -23,8 +23,8 @@
                 android:layout_height="wrap_content"
                 android:text="Title:"
                 android:textStyle="bold"
-                android:fontFamily="serif-monospace"
-                android:textColor="#FFF"
+                android:fontFamily="@font/sourceserifpro"
+                android:textColor="#ffff"
                 android:layout_marginHorizontal="12dp"
                 android:textSize="24sp"/>
 

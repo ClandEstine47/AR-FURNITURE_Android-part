@@ -2,7 +2,7 @@
   "furniture": [
     {
       "id": "chair_1",
-      "name": "OFFICE CHAIR",
+      "name": "Office Chair",
       "category": "Chair",
       "image_url": "https://i.postimg.cc/dVD0nqHx/chair1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/millberget-swivel-chair-murum-black__1045855_pe842739_s5.jpg",
@@ -12,7 +12,7 @@
     },
     {
       "id": "bed_1",
-      "name": "SINGLE BED",
+      "name": "Single Bed",
       "category": "Bed",
       "image_url": "https://i.postimg.cc/GmNm5Z6h/bed2.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/songesand-bed-frame-brown__0752925_pe747516_s5.jpg?f=xs",
@@ -21,7 +21,7 @@
     },
     {
       "id": "bed_2",
-      "name": "TWIN XL BED",
+      "name": "Twin XL Bed",
       "category": "Bed",
       "image_url": "https://i.postimg.cc/HkJpX6jG/bed1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/tufjord-upholstered-storage-bed-gunnared-blue__0932763_pe791610_s5.jpg?f=xs",
@@ -32,7 +32,7 @@
     },
     {
       "id": "sofa_1",
-      "name": "2 SEAT SOFA",
+      "name": "2 Seat Sofa",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/DywfyvTw/sofa1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/morabo-sofa-gunnared-dark-gray-wood__0815815_pe773045_s5.jpg?f=xs",
@@ -41,7 +41,7 @@
     },
     {
       "id": "sofa_2",
-      "name": "4 SEAT SOFA",
+      "name": "4 Seat Sofa",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/rFZVDBVC/sofa2.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/vinliden-loveseat-hakebo-dark-gray__0964285_pe808968_s5.jpg?f=xs",
@@ -50,7 +50,7 @@
     },
     {
       "id": "sofa_3",
-      "name": "COUCH",
+      "name": "Couch",
       "category": "Sofa",
       "image_url": "https://i.postimg.cc/rprwXfLG/sofa3.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/friheten-sleeper-sectional-3-seat-w-storage-hyllie-dark-gray__0733170_pe738880_s5.jpg?f=xl",
@@ -59,7 +59,7 @@
     },
     {
       "id": "table_1",
-      "name": "LINNMON",
+      "name": "Linnmon",
       "category": "Table",
       "image_url":  "https://i.postimg.cc/WbNzFmMj/table1.png",
       "dimensions": "https://www.ikea.com/us/en/images/products/linnmon-adils-table-white__1009784_pe827741_s5.jpg?f=xs",

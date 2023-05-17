@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import com.squareup.picasso.Picasso
 
-class FurnitureAdapter(private val context: Context, private val items: ArrayList<FurnitureModelClass>) :
+class FurnitureAdapter(private val context: Context, private var items: ArrayList<FurnitureModelClass>) :
     RecyclerView.Adapter<FurnitureAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
@@ -19,9 +19,16 @@ class FurnitureAdapter(private val context: Context, private val items: ArrayLis
         fun onItemClick(position: Int)
     }
 
+    fun setFilteredList(items: ArrayList<FurnitureModelClass>){
+        this.items = items
+        notifyDataSetChanged()
+    }
+
+
     fun setOnItemClickListener(listener: onItemClickListener){
         mListener = listener
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(

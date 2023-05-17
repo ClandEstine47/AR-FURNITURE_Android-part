@@ -1,10 +1,13 @@
 package com.clandestinestudio.arfurniture
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.HorizontalScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,11 +15,29 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import org.json.JSONException
 import org.json.JSONObject
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var searchView: SearchView
+    private lateinit var rvRecyclerView: RecyclerView
+    private lateinit var adapter: FurnitureAdapter
+    private lateinit var categoryHorizontalScrollView: HorizontalScrollView
+    private lateinit var categoryHeadingTextView: TextView
+    private var furnitureList : ArrayList<FurnitureModelClass> = ArrayList()
+    private var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        searchView = findViewById(R.id.text_input_area)
+        searchView.clearFocus()
+        rvRecyclerView = findViewById(R.id.rvFurnitureList)
+        categoryHorizontalScrollView = findViewById(R.id.horizontalScrollView)
+        categoryHeadingTextView = findViewById(R.id.category_heading_tv)
 
 //        startActivity(Intent(this, UnityHandlerActivity::class.java))
         val bedCard = findViewById<CardView>(R.id.cv_beds)
@@ -24,8 +45,9 @@ class MainActivity : AppCompatActivity() {
         val chairCard = findViewById<CardView>(R.id.cv_chairs)
         val tableCard = findViewById<CardView>(R.id.cv_tables)
         val rvRecyclerView = findViewById<RecyclerView>(R.id.rvFurnitureList)
-        val furnitureList : ArrayList<FurnitureModelClass> = ArrayList()
-        var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
+
+
+        //parsing the json from assets folder for the furniture data
         try {
 
             val obj = JSONObject(getJSONFromAssets())
@@ -53,9 +75,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         rvRecyclerView.layoutManager = GridLayoutManager(this,2)
-        val itemAdapter = FurnitureAdapter(this, furnitureList)
-        rvRecyclerView.adapter = itemAdapter
-        itemAdapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
+        adapter = FurnitureAdapter(this, furnitureList)
+        rvRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
 //                Toast.makeText(this@MainActivity, "you have clicked on item no: $position", Toast.LENGTH_SHORT).show()
 
@@ -72,6 +94,31 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        // search view backend code
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+        })
+
+        //hides the categories layout when the text input field is clicked
+        searchView.setOnQueryTextFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                categoryHorizontalScrollView.visibility = View.GONE
+                categoryHeadingTextView.visibility = View.GONE
+            } else {
+                categoryHorizontalScrollView.visibility = View.VISIBLE
+                categoryHeadingTextView.visibility = View.VISIBLE
+            }
+        }
+
 
         fun openCategoryActivity(){
             val intent = Intent(this, CategoryActivity::class.java)
@@ -94,6 +141,28 @@ class MainActivity : AppCompatActivity() {
         tableCard.setOnClickListener {
             categorizedList = furnitureList.filter { it.category == "Table"} as ArrayList<FurnitureModelClass>
             openCategoryActivity()
+        }
+
+    }
+
+    private fun filterList(query: String?) {
+
+        if (query != null) {
+            val filteredList = ArrayList<FurnitureModelClass>()
+
+            for (i in furnitureList) {
+                if(i.name?.lowercase(Locale.ROOT)?.contains(query) == true) {
+                    filteredList.add(i)
+                }
+
+            }
+
+            if (filteredList.isEmpty()) {
+                Toast.makeText(this, "No Such Item", Toast.LENGTH_SHORT).show()
+            }else {
+                adapter.setFilteredList(filteredList)
+
+            }
         }
 
     }
