@@ -14,6 +14,7 @@ class FurnitureAdapter(private val context: Context, private var items: ArrayLis
     RecyclerView.Adapter<FurnitureAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
+    private lateinit var filteredList: ArrayList<FurnitureModelClass>
 
     interface onItemClickListener {
         fun onItemClick(position: Int)
@@ -21,7 +22,12 @@ class FurnitureAdapter(private val context: Context, private var items: ArrayLis
 
     fun setFilteredList(items: ArrayList<FurnitureModelClass>){
         this.items = items
+        this.filteredList = items
         notifyDataSetChanged()
+    }
+
+    fun getFilteredList(): ArrayList<FurnitureModelClass> {
+        return filteredList
     }
 
 

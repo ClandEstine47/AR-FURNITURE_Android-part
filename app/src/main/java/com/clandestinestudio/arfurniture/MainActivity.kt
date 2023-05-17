@@ -82,19 +82,39 @@ class MainActivity : AppCompatActivity() {
         rvRecyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-//                Toast.makeText(this@MainActivity, "you have clicked on item no: $position", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this@MainActivity, DetailsActivity::class.java)
-                intent.putExtra("id", furnitureList[position].id)
-                intent.putExtra("name", furnitureList[position].name)
-                intent.putExtra("image_url", furnitureList[position].image_url)
-                intent.putExtra("dimensions", furnitureList[position].dimensions)
-                intent.putExtra("description", furnitureList[position].description)
-                intent.putExtra("category", furnitureList[position].category)
-                intent.putExtra("itemFolderName", furnitureList[position].itemFolderName)
+                val selectedItem = if (searchView.query.isNullOrBlank() && !searchView.hasFocus()) {
+                    furnitureList[position]
+                } else {
+                    adapter.getFilteredList()[position]
+                }
+                val intent = Intent(this@MainActivity, DetailsActivity::class.java).apply {
+                    putExtra("id", selectedItem.id)
+                    putExtra("name", selectedItem.name)
+                    putExtra("image_url", selectedItem.image_url)
+                    putExtra("dimensions", selectedItem.dimensions)
+                    putExtra("description", selectedItem.description)
+                    putExtra("category", selectedItem.category)
+                    putExtra("itemFolderName", selectedItem.itemFolderName)
+                }
                 startActivity(intent)
                 Animatoo.animateSwipeRight(this@MainActivity)
             }
+
+//            override fun onItemClick(position: Int) {
+////                Toast.makeText(this@MainActivity, "you have clicked on item no: $position", Toast.LENGTH_SHORT).show()
+//
+//                val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+//                intent.putExtra("id", furnitureList[position].id)
+//                intent.putExtra("name", furnitureList[position].name)
+//                intent.putExtra("image_url", furnitureList[position].image_url)
+//                intent.putExtra("dimensions", furnitureList[position].dimensions)
+//                intent.putExtra("description", furnitureList[position].description)
+//                intent.putExtra("category", furnitureList[position].category)
+//                intent.putExtra("itemFolderName", furnitureList[position].itemFolderName)
+//                startActivity(intent)
+//                Animatoo.animateSwipeRight(this@MainActivity)
+//            }
+
 
         })
 
