@@ -6,30 +6,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_color"
     tools:context=".DetailsActivity">
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/background_color"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="364dp"
+                android:layout_height="364sp"
                 android:background="@color/white">
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_detailsPage"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/bed_example"-->
-<!--                    android:scaleType="centerInside"-->
-<!--                    android:layout_gravity="center"-->
-<!--                     />-->
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/iv_detailsPage"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:src="@drawable/bed_example"-->
+                <!--                    android:scaleType="centerInside"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                     />-->
                 <com.denzcoskun.imageslider.ImageSlider
                     android:id="@+id/image_slider"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     app:iss_auto_cycle="true"
                     app:iss_period="2500"
                     app:iss_delay="0"
@@ -39,67 +43,129 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/Secondary_blue_200" />
+                android:layout_height="1sp"
+                android:background="@color/Secondary_blue_200"
+                tools:ignore="SmallSp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginVertical="14dp">
+                android:layout_marginVertical="14sp">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:paddingTop="16sp"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/tv_name_detailsPage"
-                        android:layout_width="160dp"
+                        android:layout_width="200sp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="serif-monospace"
+                        android:layout_marginStart="16sp"
+                        android:text="office chair"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/tv_category_detailsPage"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="30sp"
+                        android:layout_marginStart="16sp"
+                        android:text="chair"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:fontFamily="serif-monospace"
-                        />
+                        android:fontFamily="serif-monospace" />
+
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                   android:layout_marginStart="150dp">
+                    android:layout_weight="1"
+                    android:gravity="end">
 
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/lottieFavorite"
-                        android:layout_width="80dp"
-                        android:layout_height="50dp"
+                        android:layout_width="80sp"
+                        android:layout_height="60sp"
                         android:scaleType="centerCrop"
                         app:lottie_rawRes="@raw/favorite" />
 
                 </LinearLayout>
-
-
             </LinearLayout>
+
+
+            <!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginVertical="14sp">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingTop="16sp"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <TextView-->
+<!--                        android:text="office chair"-->
+<!--                        android:id="@+id/tv_name_detailsPage"-->
+<!--                        android:layout_width="200sp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="serif-monospace"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_marginStart="16sp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="24sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:text="chair"-->
+<!--                        android:id="@+id/tv_category_detailsPage"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="30sp"-->
+<!--                        android:layout_marginStart="16sp"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:fontFamily="serif-monospace"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    >-->
+
+<!--                    <com.airbnb.lottie.LottieAnimationView-->
+<!--                        android:id="@+id/lottieFavorite"-->
+<!--                        android:layout_width="80sp"-->
+<!--                        android:layout_height="60sp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        app:lottie_rawRes="@raw/favorite" />-->
+
+<!--                </RelativeLayout>-->
+
+
+<!--            </LinearLayout>-->
+
+
+
             <View
-                android:layout_width="250dp"
-                android:layout_height="1dp"
+                android:layout_width="250sp"
+                android:layout_height="1sp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="#DDDDDD"/>
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="16sp"
+                android:background="#C2C2C2"
+                tools:ignore="SmallSp" />
             <TextView
                 android:id="@+id/tv_description_detailsPage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="16sp"
                 android:textAlignment="center"
                 android:textColor="#444444"
                 android:textSize="14sp"
@@ -109,8 +175,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginVertical="8dp"
-                android:layout_marginHorizontal="60dp"
+                android:layout_marginVertical="8sp"
+                android:layout_marginHorizontal="60sp"
                 android:backgroundTint="@color/Secondary_blue_300"
                 android:textSize="16sp"
                 android:text="Try in ar"
@@ -122,6 +188,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

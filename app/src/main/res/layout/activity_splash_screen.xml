@@ -9,6 +9,7 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
+        android:background="@color/white"
         android:layout_width="400sp"
         android:layout_height="400sp"
         android:layout_gravity="center"
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="130sp"
+        android:background="@color/white"
         android:text="AR Furniture"
         android:textSize="25sp"
         android:textStyle="bold"

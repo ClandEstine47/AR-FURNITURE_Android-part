@@ -11,44 +11,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Primary_color"
-        android:paddingTop="50dp"
-        app:elevation="8dp">
+        android:paddingTop="50sp"
+        app:elevation="8sp">
         <LinearLayout
+            android:background="@color/Primary_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
+                android:background="@color/Primary_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginBottom="8sp"
                 tools:ignore="UselessParent">
                 <TextView
+                    android:background="@color/Primary_color"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Discover"
                     android:fontFamily="@font/abrilfatface"
                     android:textColor="#FFF"
-                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginHorizontal="25sp"
                     android:textSize="24sp"/>
             </RelativeLayout>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8sp"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginBottom="16sp"
                 android:orientation="horizontal">
                 <androidx.appcompat.widget.SearchView
+
                     android:id="@+id/text_input_area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:queryBackground="@android:color/transparent"
                     android:background="@drawable/white_rounded_shape"
                     app:searchIcon="@drawable/search_icon"
                     app:queryHint="What are you looking for ?"
                     app:iconifiedByDefault="false"
                    />
-            </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -69,51 +74,54 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Categories"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="16sp"
+                    android:layout_marginBottom="4sp"
                     android:textSize="16sp"
                     android:fontFamily="@font/sourceserifpro"
                     android:textColor="@color/text_color"
-                    android:layout_marginHorizontal="14dp"
-                    android:padding="8dp"/>
+                    android:layout_marginHorizontal="14sp"
+                    android:padding="8sp"/>
                 <HorizontalScrollView
                     android:id = "@+id/horizontalScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="4sp"
                     android:scrollbars="none"
                     >
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:padding="8dp">
+                        android:padding="8sp">
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_beds"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="4sp"
                             android:foreground="?attr/selectableItemBackground"
                             android:backgroundTint="@color/accent_color"
                             android:focusable="true"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0.5dp"
+                            app:cardCornerRadius="8sp"
+                            app:cardElevation="0.5sp"
                             app:cardUseCompatPadding="true"
-                            app:contentPadding="12dp">
+                            app:contentPadding="12sp">
                             <LinearLayout
-                                android:layout_width="120dp"
+                                android:background="@color/accent_color"
+                                android:layout_width="120sp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 >
                                 <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_marginHorizontal="20dp"
+                                    android:background="@color/accent_color"
+                                    android:layout_width="80sp"
+                                    android:layout_height="80sp"
+                                    android:layout_marginHorizontal="20sp"
                                     android:src="@drawable/bed_1" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Beds"
+                                    android:background="@color/accent_color"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="normal"
                                     android:fontFamily="@font/sourceserifpro"
@@ -125,28 +133,31 @@
                             android:id="@+id/cv_sofas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="4sp"
                             android:foreground="?attr/selectableItemBackground"
                             android:backgroundTint="@color/accent_color"
                             android:focusable="true"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0.5dp"
+                            app:cardCornerRadius="8sp"
+                            app:cardElevation="0.5sp"
                             app:cardUseCompatPadding="true"
-                            app:contentPadding="12dp">
+                            app:contentPadding="12sp">
                             <LinearLayout
-                                android:layout_width="120dp"
+                                android:layout_width="120sp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
+                                android:background="@color/accent_color"
                                 >
                                 <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_width="80sp"
+                                    android:layout_height="80sp"
+                                    android:layout_marginHorizontal="20sp"
+                                    android:background="@color/accent_color"
                                     android:src="@drawable/sofa_1" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Sofas"
+                                    android:background="@color/accent_color"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="normal"
                                     android:fontFamily="@font/sourceserifpro"
@@ -158,27 +169,30 @@
                             android:id="@+id/cv_chairs"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="4sp"
                             android:foreground="?attr/selectableItemBackground"
                             android:backgroundTint="@color/accent_color"
                             android:focusable="true"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0.5dp"
+                            app:cardCornerRadius="8sp"
+                            app:cardElevation="0.5sp"
                             app:cardUseCompatPadding="true"
-                            app:contentPadding="12dp">
+                            app:contentPadding="12sp">
                             <LinearLayout
-                                android:layout_width="120dp"
+                                android:layout_width="120sp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
+                                android:background="@color/accent_color"
                                 >
                                 <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_width="80sp"
+                                    android:layout_height="80sp"
+                                    android:layout_marginHorizontal="20sp"
+                                    android:background="@color/accent_color"
                                     android:src="@drawable/chair_1" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:background="@color/accent_color"
                                     android:text="Chairs"
                                     android:layout_gravity="center_horizontal"
                                     android:textStyle="normal"
@@ -191,23 +205,25 @@
                             android:id="@+id/cv_tables"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="4sp"
                             android:foreground="?attr/selectableItemBackground"
                             android:backgroundTint="@color/accent_color"
                             android:focusable="true"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0.5dp"
+                            app:cardCornerRadius="8sp"
+                            app:cardElevation="0.5sp"
                             app:cardUseCompatPadding="true"
-                            app:contentPadding="12dp">
+                            app:contentPadding="12sp">
                             <LinearLayout
-                                android:layout_width="120dp"
+                                android:layout_width="120sp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
+                                android:background="@color/accent_color"
                                 >
                                 <ImageView
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_width="80sp"
+                                    android:layout_height="80sp"
+                                    android:layout_marginHorizontal="20sp"
+                                    android:background="@color/accent_color"
                                     android:src="@drawable/table_1" />
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -226,16 +242,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Explore"
-                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginHorizontal="24sp"
                     android:textSize="16sp"
                     android:textColor="@color/text_color"
                     android:fontFamily="@font/sourceserifpro"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginBottom="16sp"
+                    android:layout_marginTop="8sp" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvFurnitureList"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6sp"
                     />
 
 
