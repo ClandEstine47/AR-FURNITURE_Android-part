@@ -34,7 +34,7 @@ class SplashScreen : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(6000L)
             startActivity(Intent(this@SplashScreen, MainActivity::class.java))
-            Animatoo.animateSplit(this@SplashScreen)
+            Animatoo.animateZoom(this@SplashScreen)
             finish()
         }
 

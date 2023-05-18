@@ -2,6 +2,7 @@ package com.clandestinestudio.arfurniture
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,15 @@ class DetailsActivity : AppCompatActivity() {
         val imageSlider: ImageSlider = findViewById(R.id.image_slider)
 
         val lottieAnimationView: LottieAnimationView = findViewById(R.id.lottieFavorite)
+
+
+        //some animation stuff
+        val textAnimation = AnimationUtils.loadAnimation(this, R.anim.text_translate)
+        val buttonAnimation = AnimationUtils.loadAnimation(this, R.anim.button_anim)
+        furnitureDescriptionView.startAnimation(textAnimation)
+        btnOpenUnity.startAnimation(buttonAnimation)
+
+
 
         val bundle: Bundle? = intent.extras
         furniture = FavoriteFurniture(

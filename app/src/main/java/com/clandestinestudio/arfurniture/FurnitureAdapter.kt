@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import com.squareup.picasso.Picasso
@@ -51,6 +53,15 @@ class FurnitureAdapter(private val context: Context, private var items: ArrayLis
         val item = items[position]
         holder.tvName.text = item.name
         Picasso.get().load(item.image_url).into(holder.imageView)
+//        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.card_anim))
+
+//        animation stuff for card views
+        val animation = AnimationUtils.loadAnimation(context, R.anim.card_anim)
+        val startOffSet = position * 100
+
+        animation.startOffset = startOffSet.toLong()
+
+        holder.cardView.startAnimation(animation)
 
     }
 
@@ -62,6 +73,7 @@ class FurnitureAdapter(private val context: Context, private var items: ArrayLis
         // Holds the TextView that will add each item to
         val tvName : TextView = view.findViewById(R.id.tv_name)
         val imageView: ImageView = view.findViewById(R.id.img_view)
+        val cardView: CardView = view.findViewById(R.id.furnitureCardView)
 
         init {
             itemView.setOnClickListener {
