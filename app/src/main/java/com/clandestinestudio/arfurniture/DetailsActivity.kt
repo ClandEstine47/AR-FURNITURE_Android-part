@@ -123,6 +123,14 @@ class DetailsActivity : AppCompatActivity() {
     // animate when back button is pressed
     override fun onBackPressed() {
         super.onBackPressed()
+        //to know if the previous activity was FavoriteActivity
+        val favActivity = intent.flags and Intent.FLAG_ACTIVITY_FORWARD_RESULT != 0
+        if(favActivity) {
+            val intent = Intent(this, FavoritesActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+
         Animatoo.animateSwipeLeft(this)
 
     }

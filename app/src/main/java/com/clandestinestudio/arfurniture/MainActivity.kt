@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
+import com.unity3d.player.UnityPlayerActivity
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.Locale
@@ -48,6 +50,14 @@ class MainActivity : AppCompatActivity() {
         val chairCard = findViewById<CardView>(R.id.cv_chairs)
         val tableCard = findViewById<CardView>(R.id.cv_tables)
         val rvRecyclerView = findViewById<RecyclerView>(R.id.rvFurnitureList)
+
+        val favButton = findViewById<Button>(R.id.btn_fav)
+
+        favButton.setOnClickListener{
+            val intent = Intent(this, FavoritesActivity::class.java)
+            startActivity(intent)
+            Animatoo.animateZoom(this@MainActivity)
+        }
 
 
         //parsing the json from assets folder for the furniture data

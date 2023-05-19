@@ -1,5 +1,7 @@
 package com.clandestinestudio.arfurniture.Model
 
+import java.io.Serializable
+
 data class FavoriteFurniture(
     val id: String,
     val name: String,
@@ -8,4 +10,4 @@ data class FavoriteFurniture(
     val dimensions: String,
     val description: String,
     val itemFolderName: String,
-)
+) : Serializable

@@ -11,6 +11,7 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 
 class CategoryActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)

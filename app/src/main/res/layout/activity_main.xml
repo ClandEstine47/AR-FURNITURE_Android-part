@@ -26,6 +26,7 @@
                 android:layout_marginBottom="8sp"
                 tools:ignore="UselessParent">
                 <TextView
+                    android:id="@+id/ffff"
                     android:background="@color/Primary_color"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -34,6 +35,19 @@
                     android:textColor="#FFF"
                     android:layout_marginHorizontal="25sp"
                     android:textSize="24sp"/>
+                <Button
+                    android:id="@+id/btn_fav"
+                    android:textColor="@color/text_color"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/accent_color"
+                    android:textSize="12sp"
+                    android:text="fav"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/sourceserifpro"
+                    android:textStyle="bold"
+
+                    />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -75,7 +89,6 @@
                     android:layout_height="wrap_content"
                     android:text="Categories"
                     android:layout_marginTop="16sp"
-                    android:layout_marginBottom="4sp"
                     android:textSize="16sp"
                     android:fontFamily="@font/sourceserifpro"
                     android:textColor="@color/text_color"
