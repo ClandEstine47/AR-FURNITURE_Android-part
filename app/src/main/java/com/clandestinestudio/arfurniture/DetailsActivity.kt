@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.unity3d.player.UnityPlayer
 import com.unity3d.player.UnityPlayerActivity
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 class DetailsActivity : AppCompatActivity() {
     private var furnitureFolderName: String? = null
@@ -48,6 +49,39 @@ class DetailsActivity : AppCompatActivity() {
         furnitureDescriptionView.startAnimation(textAnimation)
         btnOpenUnity.startAnimation(buttonAnimation)
 
+
+        //navigation stuff
+        val bottomNavbar : AnimatedBottomBar = findViewById(R.id.bottom_bar)
+        bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+
+                when (newTab.title) {
+
+                    "Home" -> {
+                        startActivity(Intent(applicationContext, MainActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                    }
+                    "My Collections" -> {
+                        startActivity(Intent(applicationContext, FavoritesActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                    }
+                    "Search" -> {
+                        val mainIntent = Intent(applicationContext, MainActivity::class.java)
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
+                        mainIntent.putExtra("focusSearchView", true)
+                        startActivity(mainIntent)
+                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                    }
+
+                }
+
+            }
+        })
 
 
         val bundle: Bundle? = intent.extras
@@ -105,6 +139,7 @@ class DetailsActivity : AppCompatActivity() {
             openUnity()
         }
 
+
     }
 
     private fun openUnity() {
@@ -119,6 +154,7 @@ class DetailsActivity : AppCompatActivity() {
         isFavorite = favoriteFurnitures.any { it.id == furniture.id }
         updateFavoriteAnimation(isFavorite)
     }
+
 
     // animate when back button is pressed
     override fun onBackPressed() {

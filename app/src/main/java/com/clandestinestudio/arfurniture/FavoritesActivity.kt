@@ -3,12 +3,15 @@ package com.clandestinestudio.arfurniture
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FavoriteFurniture
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import com.clandestinestudio.arfurniture.Model.SharedPreferencesManager
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 class FavoritesActivity : AppCompatActivity() {
     private lateinit var rvFavoriteList: RecyclerView
@@ -31,6 +34,39 @@ class FavoritesActivity : AppCompatActivity() {
             furnitureModelList.add(furnitureModel)
         }
 
+
+        // navigation stuff
+        val bottomNavbar : AnimatedBottomBar = findViewById(R.id.bottom_bar)
+        bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+
+                when (newTab.title) {
+
+                    "Home" -> {
+                        startActivity(Intent(applicationContext, MainActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                    }
+                    "My Collections" -> {
+                        startActivity(Intent(applicationContext, FavoritesActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                    }
+                    "Search" -> {
+                        val mainIntent = Intent(applicationContext, MainActivity::class.java)
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
+                        mainIntent.putExtra("focusSearchView", true)
+                        startActivity(mainIntent)
+                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                    }
+
+                }
+
+            }
+        })
 
 
         rvFavoriteList.layoutManager = GridLayoutManager(this, 2)

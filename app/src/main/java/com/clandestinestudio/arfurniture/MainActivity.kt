@@ -3,9 +3,11 @@ package com.clandestinestudio.arfurniture
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
 import com.unity3d.player.UnityPlayerActivity
+import nl.joery.animatedbottombar.AnimatedBottomBar
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.Locale
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var exploreHeadingTextView: TextView
     private var furnitureList : ArrayList<FurnitureModelClass> = ArrayList()
     private var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
+    private lateinit var bottomNavbar: AnimatedBottomBar
+    private var shouldFocusSearchView: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         categoryHeadingTextView = findViewById(R.id.category_heading_tv)
         exploreHeadingTextView = findViewById(R.id.exploreHeadingTv)
 
+        shouldFocusSearchView = intent.getBooleanExtra("focusSearchView", false)
+
 //        startActivity(Intent(this, UnityHandlerActivity::class.java))
         val bedCard = findViewById<CardView>(R.id.cv_beds)
         val sofaCard = findViewById<CardView>(R.id.cv_sofas)
@@ -51,13 +58,39 @@ class MainActivity : AppCompatActivity() {
         val tableCard = findViewById<CardView>(R.id.cv_tables)
         val rvRecyclerView = findViewById<RecyclerView>(R.id.rvFurnitureList)
 
-        val favButton = findViewById<Button>(R.id.btn_fav)
 
-        favButton.setOnClickListener{
-            val intent = Intent(this, FavoritesActivity::class.java)
-            startActivity(intent)
-            Animatoo.animateZoom(this@MainActivity)
-        }
+
+
+        // navigation stuff
+        bottomNavbar = findViewById(R.id.bottom_bar)
+
+        bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+
+                when (newTab.title) {
+
+                    "My Collections" -> {
+                        startActivity(Intent(applicationContext, FavoritesActivity::class.java))
+                        Animatoo.animateSwipeRight(this@MainActivity)
+                    }
+
+                    "Search" -> {
+                            searchView.requestFocus()
+                    }
+
+                    "Home" -> {
+                        searchView.clearFocus()
+                    }
+
+                }
+
+            }
+        })
 
 
         //parsing the json from assets folder for the furniture data
@@ -202,6 +235,8 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+
     }
 
     private fun getJSONFromAssets(): String? {
@@ -209,6 +244,19 @@ class MainActivity : AppCompatActivity() {
         val jsonString: String = assets.open("furniture_data.json").bufferedReader().use {
             it.readText()}
         return jsonString
+
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        val favActivity =  intent.flags and Intent.FLAG_ACTIVITY_FORWARD_RESULT != 0
+
+        if(favActivity and shouldFocusSearchView) {
+           searchView.requestFocus()
+            bottomNavbar.selectTabById(R.id.tab_search)
+            shouldFocusSearchView = false
+        }
 
     }
 
@@ -221,3 +269,4 @@ class MainActivity : AppCompatActivity() {
         super.onBackPressed()
     }
 }
+

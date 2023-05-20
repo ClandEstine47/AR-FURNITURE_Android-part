@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/Primary_color"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
         android:layout_alignParentBottom="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_marginTop="54sp"
+        android:layout_marginBottom="49sp"
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -46,5 +48,23 @@
             android:layout_marginHorizontal="6sp"
             />
     </LinearLayout>
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="49sp"
+        android:layout_gravity="bottom"
+        app:abb_selectedTabType="text"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="@color/Primary_color"
+        app:abb_indicatorMargin="16dp"
+        app:abb_indicatorHeight="4dp"
+        app:abb_tabs="@menu/tabs"
+        app:abb_selectedIndex="2"
+        app:abb_tabColorSelected="@color/text_color"
+        app:abb_rippleEnabled="true"
+
+
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

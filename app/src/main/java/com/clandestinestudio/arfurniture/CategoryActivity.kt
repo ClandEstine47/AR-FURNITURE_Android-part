@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.clandestinestudio.arfurniture.Model.FurnitureModelClass
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 class CategoryActivity : AppCompatActivity() {
 
@@ -16,6 +17,42 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
         supportActionBar?.hide()
+
+        //navigation stuff
+        val bottomNavbar : AnimatedBottomBar = findViewById(R.id.bottom_bar)
+        bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+
+                when (newTab.title) {
+
+                    "Home" -> {
+                        startActivity(Intent(applicationContext, MainActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+                    }
+                    "My Collections" -> {
+                        startActivity(Intent(applicationContext, FavoritesActivity::class.java))
+                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+                    }
+                    "Search" -> {
+                        val mainIntent = Intent(applicationContext, MainActivity::class.java)
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
+                        mainIntent.putExtra("focusSearchView", true)
+                        startActivity(mainIntent)
+                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+                    }
+
+                }
+
+            }
+        })
+
+
+
         val categoryTitleTV: TextView = findViewById(R.id.tv_category_title)
         val rvCategoryList: RecyclerView = findViewById(R.id.rvCategoryFurnitureList)
 
