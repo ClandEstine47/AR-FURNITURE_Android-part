@@ -268,12 +268,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (!searchView.isIconified) {
-            searchView.setQuery("", false)
-            searchView.isIconified = true
-            return
-        }
-        super.onBackPressed()
+//        super.onBackPressed()
+        moveTaskToBack(true)
     }
+
+// this code is not needed for now, kept just in case for future use
+//    override fun onBackPressed() {
+//        if (!searchView.isIconified) {
+//            searchView.setQuery("", false)
+//            searchView.isIconified = true
+//            return
+//        }else{
+//            finishAffinity()
+//            finish()
+//
+//        }
+//        super.onBackPressed()
+//
+//    }
+
+
 }
 
