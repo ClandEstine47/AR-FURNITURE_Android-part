@@ -1,9 +1,11 @@
 package com.clandestinestudio.arfurniture
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,12 +20,14 @@ class FavoritesActivity : AppCompatActivity() {
     private lateinit var sharedPreferencesManager: SharedPreferencesManager
     private  lateinit var favoriteFurnitureList: List<FavoriteFurniture>
     private lateinit var bottomNavbar : AnimatedBottomBar
+    private lateinit var favTextInfo : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
         supportActionBar?.hide()
 
+        favTextInfo = findViewById(R.id.fav_info)
         rvFavoriteList = findViewById(R.id.rvFavoritesList)
 
         sharedPreferencesManager = SharedPreferencesManager(this)
@@ -123,6 +127,11 @@ class FavoritesActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         favoriteFurnitureList = sharedPreferencesManager.getFavoriteFurnitureList()
+        if (favoriteFurnitureList.isEmpty()) {
+            favTextInfo.visibility = TextView.VISIBLE
+        }else{
+            favTextInfo.visibility = TextView.GONE
+        }
 
 
     }
