@@ -9,14 +9,13 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Primary_color"
+        android:background="@drawable/gradient_appbar"
         android:padding="14sp"
         app:elevation="8sp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/Primary_color"
             android:orientation="vertical"
             >
             <TextView
@@ -24,7 +23,6 @@
                 android:layout_height="wrap_content"
                 android:text="My Collection"
                 android:textStyle="bold"
-                android:background="@color/Primary_color"
                 android:fontFamily="@font/sourceserifpro"
                 android:textColor="#ffff"
                 android:layout_marginHorizontal="12sp"

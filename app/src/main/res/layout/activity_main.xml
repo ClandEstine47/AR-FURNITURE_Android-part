@@ -10,24 +10,20 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Primary_color"
+        android:background="@drawable/gradient_appbar"
         android:paddingTop="50sp"
         app:elevation="8sp">
         <LinearLayout
-            android:background="@color/Primary_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
-                android:background="@color/Primary_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16sp"
                 android:layout_marginBottom="8sp"
                 tools:ignore="UselessParent">
                 <TextView
-                    android:id="@+id/ffff"
-                    android:background="@color/Primary_color"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Discover"
