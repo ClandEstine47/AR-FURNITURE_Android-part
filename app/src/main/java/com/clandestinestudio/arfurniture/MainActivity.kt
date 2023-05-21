@@ -36,12 +36,14 @@ class MainActivity : AppCompatActivity() {
     private var categorizedList: ArrayList<FurnitureModelClass> = ArrayList()
     private lateinit var bottomNavbar: AnimatedBottomBar
     private var shouldFocusSearchView: Boolean = false
+    private val filteredList = ArrayList<FurnitureModelClass>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        filteredList.clear()
         searchView = findViewById(R.id.text_input_area)
         searchView.clearFocus()
         rvRecyclerView = findViewById(R.id.rvFurnitureList)
@@ -76,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
                     "My Collections" -> {
                         startActivity(Intent(applicationContext, FavoritesActivity::class.java))
-                        Animatoo.animateSwipeRight(this@MainActivity)
+                        Animatoo.animateFade(this@MainActivity)
                     }
 
                     "Search" -> {
@@ -125,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         rvRecyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : FurnitureAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                val selectedItem = if (searchView.query.isNullOrBlank() && !searchView.hasFocus()) {
+                val selectedItem = if (searchView.query.isNullOrBlank() || !searchView.hasFocus()) {
                     furnitureList[position]
                 } else {
                     adapter.getFilteredList()[position]
@@ -182,6 +184,7 @@ class MainActivity : AppCompatActivity() {
                 exploreHeadingTextView.text = "Try Searching for furniture or keywords."
                 exploreHeadingTextView.textSize = 12f
                 exploreHeadingTextView.setTextColor(Color.GRAY)
+                bottomNavbar.selectTabById(R.id.tab_search)
             } else {
                 categoryHorizontalScrollView.visibility = View.VISIBLE
                 categoryHeadingTextView.visibility = View.VISIBLE
@@ -189,6 +192,7 @@ class MainActivity : AppCompatActivity() {
                 exploreHeadingTextView.textSize = 16f
                 exploreHeadingTextView.setTextColor(Color.parseColor("#465C8C"))
                 searchView.setQuery("", false)
+                bottomNavbar.selectTabById(R.id.tab_home)
             }
         }
 
@@ -237,6 +241,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
     }
 
     private fun getJSONFromAssets(): String? {
@@ -253,11 +259,12 @@ class MainActivity : AppCompatActivity() {
         val favActivity =  intent.flags and Intent.FLAG_ACTIVITY_FORWARD_RESULT != 0
 
         if(favActivity and shouldFocusSearchView) {
-           searchView.requestFocus()
+            searchView.requestFocus()
             bottomNavbar.selectTabById(R.id.tab_search)
             shouldFocusSearchView = false
+        }else {
+            bottomNavbar.selectTabById(R.id.tab_home)
         }
-
     }
 
     override fun onBackPressed() {

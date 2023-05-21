@@ -21,6 +21,7 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var sharedPreferencesManager: SharedPreferencesManager
     private lateinit var furniture: FavoriteFurniture
     private var isFavorite : Boolean = false
+    private lateinit var bottomNavbar : AnimatedBottomBar
     private fun updateFavoriteAnimation(isFavorite: Boolean) {
         val lottieAnimationView: LottieAnimationView = findViewById(R.id.lottieFavorite)
         if (isFavorite) {
@@ -51,7 +52,7 @@ class DetailsActivity : AppCompatActivity() {
 
 
         //navigation stuff
-        val bottomNavbar : AnimatedBottomBar = findViewById(R.id.bottom_bar)
+         bottomNavbar = findViewById(R.id.bottom_bar)
         bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
             override fun onTabSelected(
                 lastIndex: Int,
@@ -64,18 +65,21 @@ class DetailsActivity : AppCompatActivity() {
 
                     "Home" -> {
                         startActivity(Intent(applicationContext, MainActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                        Animatoo.animateFade(this@DetailsActivity)
+
                     }
                     "My Collections" -> {
                         startActivity(Intent(applicationContext, FavoritesActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                        Animatoo.animateFade(this@DetailsActivity)
+
                     }
                     "Search" -> {
                         val mainIntent = Intent(applicationContext, MainActivity::class.java)
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
                         mainIntent.putExtra("focusSearchView", true)
                         startActivity(mainIntent)
-                        Animatoo.animateSwipeLeft(this@DetailsActivity)
+                        Animatoo.animateFade(this@DetailsActivity)
+
                     }
 
                 }
@@ -153,6 +157,9 @@ class DetailsActivity : AppCompatActivity() {
         val favoriteFurnitures = sharedPreferencesManager.getFavoriteFurnitureList()
         isFavorite = favoriteFurnitures.any { it.id == furniture.id }
         updateFavoriteAnimation(isFavorite)
+
+
+
     }
 
 

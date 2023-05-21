@@ -17,6 +17,7 @@ class FavoritesActivity : AppCompatActivity() {
     private lateinit var rvFavoriteList: RecyclerView
     private lateinit var sharedPreferencesManager: SharedPreferencesManager
     private  lateinit var favoriteFurnitureList: List<FavoriteFurniture>
+    private lateinit var bottomNavbar : AnimatedBottomBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,7 @@ class FavoritesActivity : AppCompatActivity() {
 
 
         // navigation stuff
-        val bottomNavbar : AnimatedBottomBar = findViewById(R.id.bottom_bar)
+        bottomNavbar  = findViewById(R.id.bottom_bar)
         bottomNavbar.setOnTabSelectListener(object: AnimatedBottomBar.OnTabSelectListener{
             override fun onTabSelected(
                 lastIndex: Int,
@@ -49,18 +50,21 @@ class FavoritesActivity : AppCompatActivity() {
 
                     "Home" -> {
                         startActivity(Intent(applicationContext, MainActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                        Animatoo.animateFade(this@FavoritesActivity)
+
                     }
                     "My Collections" -> {
                         startActivity(Intent(applicationContext, FavoritesActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                        Animatoo.animateFade(this@FavoritesActivity)
+
                     }
                     "Search" -> {
                         val mainIntent = Intent(applicationContext, MainActivity::class.java)
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
                         mainIntent.putExtra("focusSearchView", true)
                         startActivity(mainIntent)
-                        Animatoo.animateSwipeLeft(this@FavoritesActivity)
+                        Animatoo.animateFade(this@FavoritesActivity)
+
                     }
 
                 }
@@ -119,6 +123,8 @@ class FavoritesActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         favoriteFurnitureList = sharedPreferencesManager.getFavoriteFurnitureList()
+
+
     }
 
     override fun onBackPressed() {

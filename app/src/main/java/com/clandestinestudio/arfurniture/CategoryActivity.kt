@@ -32,18 +32,20 @@ class CategoryActivity : AppCompatActivity() {
 
                     "Home" -> {
                         startActivity(Intent(applicationContext, MainActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+                        Animatoo.animateFade(this@CategoryActivity)
+
                     }
                     "My Collections" -> {
                         startActivity(Intent(applicationContext, FavoritesActivity::class.java))
-                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+                        Animatoo.animateFade(this@CategoryActivity)
                     }
                     "Search" -> {
                         val mainIntent = Intent(applicationContext, MainActivity::class.java)
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
                         mainIntent.putExtra("focusSearchView", true)
                         startActivity(mainIntent)
-                        Animatoo.animateSwipeLeft(this@CategoryActivity)
+
+                        Animatoo.animateFade(this@CategoryActivity)
                     }
 
                 }

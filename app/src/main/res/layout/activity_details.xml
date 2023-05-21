@@ -201,9 +201,10 @@
         app:abb_indicatorColor="@color/Primary_color"
         app:abb_indicatorMargin="16dp"
         app:abb_indicatorHeight="4dp"
+        app:abb_indicatorAnimation="none"
         app:abb_tabs="@menu/tabs"
         app:abb_tabColorSelected="@color/text_color"
-        app:abb_rippleEnabled="true"
+
 
 
         />
