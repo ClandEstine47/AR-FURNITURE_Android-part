@@ -84,6 +84,7 @@ class CategoryActivity : AppCompatActivity() {
         })
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         Animatoo.animateZoom(this@CategoryActivity)

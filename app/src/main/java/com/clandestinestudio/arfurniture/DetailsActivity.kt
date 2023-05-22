@@ -140,30 +140,21 @@ class DetailsActivity : AppCompatActivity() {
             }
 
         btnOpenUnity.setOnClickListener{
-            openUnity()
+//            openUnity()
+            val intent = Intent(this, OpenUnityActivity::class.java)
+            intent.putExtra("message", furnitureFolderName)
+            startActivity(intent)
         }
-
-
-    }
-
-    private fun openUnity() {
-        val intent = Intent(this, UnityPlayerActivity::class.java)
-        startActivity(intent)
-        UnityPlayer.UnitySendMessage("DataManager", "ReceivedMessage", furnitureFolderName)
-
     }
     override fun onResume() {
         super.onResume()
         val favoriteFurnitures = sharedPreferencesManager.getFavoriteFurnitureList()
         isFavorite = favoriteFurnitures.any { it.id == furniture.id }
         updateFavoriteAnimation(isFavorite)
-
-
-
     }
 
-
     // animate when back button is pressed
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         //to know if the previous activity was FavoriteActivity
